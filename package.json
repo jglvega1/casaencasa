@@ -12,9 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "nodemon start.js",
-    "test": "rm -rf node_modules && npm install && nodemon test.js"
+    "test": "nodemon start.js",
+    "start": "rm -rf node_modules && npm install && nodemon test.js"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Jesús Gustavo Lechuga Vega"
 }

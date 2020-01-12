@@ -1,0 +1,20 @@
+{
+  "name": "noencasa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.16.4",
+    "mongodb": "^3.2.3",
+    "nodemon": "^1.19.0",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon start.js",
+    "test": "rm -rf node_modules && npm install && nodemon test.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

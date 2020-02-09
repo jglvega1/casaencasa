@@ -1,0 +1,48 @@
+:root{
+	--std-height: 10vh;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+/*view*/
+#view{
+	display: block;
+	width: 100vw;
+	height: calc(100vh - var(--std-height));
+	position: fixed;
+	left: 0;
+	top: 0;
+	background: #E0E0E0;
+}
+#menu{
+	display: block;
+	width: 100vw;
+	height: var(--std-height);
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background: #FAFAFA;
+	text-align: center;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.btn{
+	fill: #616161;
+	margin-top: 10px;
+	height: calc(100% - 20px);
+	margin-left: calc(100vw / 12);
+	float: left;
+}
+.compo{
+	height: 100%;
+	width: fit-content;
+	display: inline-block;
+}
+#btnMapa{
+	margin-left: 0;
+}
+.selected{
+	transition: margin .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+	fill:#1265c0;
+	margin-top: 0;
+}

@@ -13,7 +13,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "nodemon start.js",
-    "start": "rm -rf node_modules && npm install && nodemon test.js"
+    "start": "rm -rf node_modules && npm install && nodemon start.js"
   },
   "author": "Jesús Gustavo Lechuga Vega"
 }

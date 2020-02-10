@@ -15,11 +15,23 @@
 //real time / sockets functions
 	io.on('connection', (socket)=>{
 		console.log('usuario: ' + socket.id);
+		//send a copy of db
+		client.connect((err, db)=>{
+			if (err) throw err;
+			var dbo = db.db('registroNCcasas');
+			dbo.collection('casas').find().toArray((err, result) => {
+				if (err) throw err;
+				io.emit('database', result);
+			});
+		});
 	});
 //routes / express
+	var expressOptions = {root: __dirname + '/public/'};
 	app.get('/', (req, res)=>{
-		var expressOptions = {root: __dirname + '/public/'};
 		res.status(200).sendFile('index.html', expressOptions);
+	});
+	app.get('/draw', (req, res)=>{
+		res.status(200).sendFile('draw.html', expressOptions);
 	});
 //run server
 	server.listen(port, console.log(port));

@@ -1,0 +1,28 @@
+frontend
+	Pantalla de carga
+	Mapa
+		mapa svg
+		cuadras
+			lista de casas
+				acualizacion realtime
+	Reuniones
+		cuadra
+		punto de reunion
+	Herramientas
+		Actividad
+			Horas
+			Estudios
+			Publicaciones
+			Videos
+			Notas
+		Revisitas
+			Donde
+		Ruta de Revistas
+	Optimizacion
+		Cache
+		Service workers
+Backend
+	broadcasting
+	load balancer
+Data
+	Casa en casa

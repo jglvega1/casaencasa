@@ -1,3 +1,4 @@
+"use strict";
 //requirements
 	const socket = io.connect(window.location.host);
 //patterns
@@ -30,7 +31,9 @@
 		}
 	}
 //model
+	var db = new observer;
 	var currentView = new observer;
+	var lastblock = new observer;
 //view
 	//content
 		//controls
@@ -66,22 +69,61 @@
 				render(props){
 					var element = (
 						<div id="mapa">
-							<img src="media/mapa1.png"/>
+							<img src="media/mapa1.svg"/>
 						</div>
 					);
 					return element;
 				}
 			}
-			class ViewReunion extends React.Component{
-				render(props){
-					var element = (
-						<div>
-							<h1>Reunion</h1>
-						</div>
-					);
-					return element;
+			//reuniones
+				//last block
+				class CardLastBlock extends React.Component{
+					render(props){
+						var element = (
+							<div class="card territorio">
+								<div class="center">
+									<div>
+										<h2>Cuadra:</h2>
+										<h3>65</h3>
+									</div>
+									<div>
+										<svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
+									</div>
+								</div>
+							</div>
+						);
+						return element;
+					}
 				}
-			}
+				class CardEncuentro extends React.Component{
+					render(props){
+						var element = (
+							<div class="card puntoDeEncuentro">
+								<div class="center">
+									<div>
+										<h2>Punto de reunion</h2>
+										<h3>Fam. Garcia</h3>
+									</div>
+									<div>
+										<svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"/></svg>
+									</div>
+								</div>
+							</div>
+						);
+						return element;
+					}
+				}
+				class ViewReunion extends React.Component{
+					render(props){
+						var element = (
+							<div>
+								<CardLastBlock />
+								<CardEncuentro />
+							</div>
+						);
+						return element;
+					}
+				}
 			//revisitas
 				class Title extends React.Component {
 					render(props){
@@ -259,6 +301,10 @@
 				console.log(currentView.getValue())
 			}
 			currentView.addSub(viewdata)
+//controller
+	socket.on('database', (data) => db.setValue(data));
+	var pdb = () => console.log(db.getValue())
+	db.addSub(pdb);
 //start main functions
 	MenuMain()
 	currentView.setValue("map");

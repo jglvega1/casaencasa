@@ -215,12 +215,17 @@ h3{
 	display: inline-block;
 }
 .btn{
-	fill: #616161;
+	fill: #424242;
 	margin-top: 10px;
 	height: calc(100% - 20px);
 	margin-left: calc(100vw / 12);
 	float: left;
 	display: inline-block;
+	opacity: 50%;
+	transition: all .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.btn:hover{
+	opacity: 70%;
 }
 .btnImg{
 	height: 100%;
@@ -234,7 +239,7 @@ h3{
 	overflow: scroll;
 }
 .selected{
-	transition: margin .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 	fill:#1265c0;
 	margin-top: 0;
+	opacity: 100%
 }

@@ -1,7 +1,8 @@
-frontend
+frontend tech amp react
 	Pantalla de carga
 	Mapa
 		mapa svg
+			gatillos de funciones
 		cuadras
 			lista de casas
 				acualizacion realtime
@@ -21,8 +22,8 @@ frontend
 	Optimizacion
 		Cache
 		Service workers
-Backend
+Backend http2
 	broadcasting
 	load balancer
-Data
+Data python
 	Casa en casa

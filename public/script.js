@@ -65,16 +65,17 @@
 			currentView.addSub(viewRender)
 		//dom
 			const domRoot = document.getElementById('view');
-			class ViewMap extends React.Component{
-				render(props){
-					var element = (
-						<div id="mapa">
-							<img src="media/mapa1.svg"/>
-						</div>
-					);
-					return element;
+			//mapa
+				class ViewMap extends React.Component{
+					render(props){
+						var element = (
+							<div id="mapa">
+								<embed type="image/svg+xml" src="media/mapaa.svg" id="smapa"/>
+							</div>
+						);
+						return element;
+					}
 				}
-			}
 			//reuniones
 				//last block
 				class CardLastBlock extends React.Component{
@@ -305,6 +306,7 @@
 	socket.on('database', (data) => db.setValue(data));
 	var pdb = () => console.log(db.getValue())
 	db.addSub(pdb);
+	//mapa
 //start main functions
 	MenuMain()
 	currentView.setValue("map");

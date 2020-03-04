@@ -1,6 +1,5 @@
 "use strict";
 //requirements
-	const socket = io.connect(window.location.host);
 //patterns
 	class observer {
 		constructor(){
@@ -303,9 +302,6 @@
 			}
 			currentView.addSub(viewdata)
 //controller
-	socket.on('database', (data) => db.setValue(data));
-	var pdb = () => console.log(db.getValue())
-	db.addSub(pdb);
 	//mapa
 //start main functions
 	MenuMain()
